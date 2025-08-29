@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp0hkvhet5e6b"]
+
+[ext_resource type="Texture2D" uid="uid://dje2qih8524y" path="res://asset/tileset/city/Building Tiles 32x32.png" id="1_dhhk7"]
+
+[node name="SpawnPoint" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dhhk7")
+region_enabled = true
+region_rect = Rect2(64, 64, 64, 64)
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
