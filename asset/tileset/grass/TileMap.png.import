@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2v3x1e4o3gja"
-path="res://.godot/imported/tailmap.png-bb7b599bea2b876a221d1a46bc15a039.ctex"
+uid="uid://hmcix1o74veh"
+path="res://.godot/imported/TileMap.png-ddb689bd3ae7206014142e332ac13bd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/tileset/industrial-zone/1 Tiles/tailmap.png"
-dest_files=["res://.godot/imported/tailmap.png-bb7b599bea2b876a221d1a46bc15a039.ctex"]
+source_file="res://asset/tileset/grass/TileMap.png"
+dest_files=["res://.godot/imported/TileMap.png-ddb689bd3ae7206014142e332ac13bd3.ctex"]
 
 [params]
 

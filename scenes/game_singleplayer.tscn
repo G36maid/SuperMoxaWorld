@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkbu4sqfr3t74"]
+
+[ext_resource type="Script" uid="uid://denb5hic12yj" path="res://game.gd" id="1_ayjkc"]
+[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="3_wavwa"]
+[ext_resource type="PackedScene" uid="uid://c7ai4bigaryci" path="res://gui/pause_menu_singleplayer.tscn" id="4_nktp5"]
+
+[node name="Game" type="Node"]
+process_mode = 3
+script = ExtResource("1_ayjkc")
+
+[node name="LevelRoot" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_wavwa")]
+z_index = 3
+position = Vector2(89, 657)
+scale = Vector2(1, 1)
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("4_nktp5")]
+
+[connection signal="coin_collected" from="Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]

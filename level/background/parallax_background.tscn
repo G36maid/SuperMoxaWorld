@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cw6nldo3rjyyq"]
 
 [ext_resource type="Texture2D" uid="uid://cvknem5bj24sc" path="res://level/background/distant_platforms_2.webp" id="1"]
-[ext_resource type="Texture2D" uid="uid://osu4k0jdk3wa" path="res://level/background/sky.webp" id="2"]
+[ext_resource type="Texture2D" uid="uid://bhsn3us8okhev" path="res://asset/tileset/city/City background.png" id="1_oexfp"]
 [ext_resource type="Texture2D" uid="uid://twy8cs78gqbv" path="res://level/background/cloud_3.webp" id="3"]
 [ext_resource type="Texture2D" uid="uid://dud80ds6rq6vr" path="res://level/background/cloud_2.webp" id="5"]
 [ext_resource type="Texture2D" uid="uid://eeitd2vus25o" path="res://level/background/distant_platforms_1.webp" id="6"]
@@ -13,16 +13,10 @@ scroll_base_scale = Vector2(0.1, 0)
 [node name="Sky" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.2, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Sky"]
-position = Vector2(-809, 58)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("2")
-centered = false
-
 [node name="Sprite2" type="Sprite2D" parent="Sky"]
-position = Vector2(-809, 0)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("2")
+position = Vector2(-800, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("1_oexfp")
 centered = false
 
 [node name="Clouds" type="ParallaxLayer" parent="."]
@@ -135,6 +129,7 @@ texture = ExtResource("7")
 centered = false
 
 [node name="Mountains2" type="ParallaxLayer" parent="."]
+visible = false
 position = Vector2(0, 243)
 motion_scale = Vector2(0.2, 1)
 
@@ -145,10 +140,12 @@ region_enabled = true
 region_rect = Rect2(0, 0, 2048, 251.104)
 
 [node name="Mountains1" type="ParallaxLayer" parent="."]
+visible = false
 position = Vector2(0, 246)
 motion_scale = Vector2(0.4, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Mountains1"]
+visible = false
 position = Vector2(437, 278.2)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("6")

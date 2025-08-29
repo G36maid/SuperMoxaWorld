@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=4 uid="uid://bumn0yvo4kt42"]
+
+[ext_resource type="TileSet" uid="uid://c2haqfix5x3pd" path="res://asset/tileset/tileset_32.tres" id="1_cperm"]
+[ext_resource type="PackedScene" uid="uid://d20aumuaavqcm" path="res://scenes/objects/protal.tscn" id="3_hghvf"]
+[ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="15_6xu13"]
+
+[node name="Level0" type="Node2D"]
+process_mode = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD2/xUAAQABAAAAAAD3/xUAAQABAAAAAAD4/xUAAQABAAAAAAD5/xUAAQABAAAAAAD6/xUAAQABAAAAAAD7/xUAAQABAAAAAAD8/xUAAQABAAAAAAD9/xUAAQABAAAAAAD+/xUAAQABAAAAAAD//xUAAQABAAAAAAAAABUAAQABAAAAAAABABUAAQABAAAAAAACABUAAQABAAAAAAADABUAAQABAAAAAAAEABUAAQABAAAAAAAFABUAAQABAAAAAAAGABUAAQABAAAAAAAHABUAAQABAAAAAAAIABUAAQABAAAAAAAJABUAAQABAAAAAAAKABUAAQABAAAAAAALABUAAQABAAAAAAAMABUAAQABAAAAAAANABUAAQABAAAAAAAOABUAAQABAAAAAAAPABUAAQABAAAAAAAQABUAAQABAAAAAAARABUAAQABAAAAAAASABUAAQABAAAAAAATABUAAQABAAAAAAAUABUAAQABAAAAAAAVABUAAQABAAAAAAAWABUAAQABAAAAAAAHABQAAQABAAAAAAAIABQAAQABAAAAAAAJABQAAQABAAAAAAAKABQAAQABAAAAAAALABQAAQABAAAAAAAMABQAAQABAAAAAAANABQAAQABAAAAAAAOABQAAQABAAAAAAAPABQAAQABAAAAAAAQABQAAQABAAAAAAAHABMAAQAFAAMAAAAGABQAAQAFAAMAAAA=")
+tile_set = ExtResource("1_cperm")
+rendering_quadrant_size = 32
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("15_6xu13")]
+
+[node name="Protal" parent="." instance=ExtResource("3_hghvf")]
+position = Vector2(493, 609)
+next_scene_path = "uid://byayb7t0mnmnu"

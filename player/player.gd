@@ -87,3 +87,6 @@ func try_jump() -> void:
 		return
 	velocity.y = JUMP_VELOCITY
 	jump_sound.play()
+
+func _ready():
+	add_to_group("player")
