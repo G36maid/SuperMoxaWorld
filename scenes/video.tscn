@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://63r70n6073en"]
+
+[ext_resource type="VideoStream" uid="uid://p8kwygjlpyck" path="res://asset/Video/Ryan_finale.ogv" id="1_gas8c"]
+
+[node name="video" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -966.0
+offset_top = -551.0
+offset_right = 954.0
+offset_bottom = 529.0
+stream = ExtResource("1_gas8c")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -20,4 +20,12 @@ layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("4_nktp5")]
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="InterfaceLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="InterfaceLayer/AspectRatioContainer"]
+visible = false
+layout_mode = 2
+
 [connection signal="coin_collected" from="Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]

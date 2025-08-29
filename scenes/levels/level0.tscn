@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://bumn0yvo4kt42"]
+[gd_scene load_steps=6 format=4 uid="uid://bumn0yvo4kt42"]
 
 [ext_resource type="TileSet" uid="uid://c2haqfix5x3pd" path="res://asset/tileset/tileset_32.tres" id="1_cperm"]
 [ext_resource type="PackedScene" uid="uid://d20aumuaavqcm" path="res://scenes/objects/protal.tscn" id="3_hghvf"]
 [ext_resource type="PackedScene" uid="uid://dp0hkvhet5e6b" path="res://scenes/objects/spawn_point.tscn" id="4_5kr0j"]
+[ext_resource type="PackedScene" uid="uid://cjbhle2455x1i" path="res://scenes/objects/computer.tscn" id="5_ry65h"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="15_6xu13"]
 
 [node name="Level0" type="Node2D"]
@@ -22,3 +23,6 @@ next_scene_path = "uid://byayb7t0mnmnu"
 
 [node name="SpawnPoint" parent="." instance=ExtResource("4_5kr0j")]
 position = Vector2(-246, 643)
+
+[node name="Computer" parent="." instance=ExtResource("5_ry65h")]
+position = Vector2(102, 657)

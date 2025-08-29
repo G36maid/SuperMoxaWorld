@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d20aumuaavqcm" path="res://scenes/objects/protal.tscn" id="3_dywbp"]
 [ext_resource type="PackedScene" uid="uid://dp0hkvhet5e6b" path="res://scenes/objects/spawn_point.tscn" id="4_bfxgj"]
 
-[node name="Level0" type="Node2D"]
+[node name="Level1" type="Node2D"]
 process_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -17,7 +17,8 @@ rendering_quadrant_size = 32
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_bfxgj")]
 
 [node name="Protal" parent="." instance=ExtResource("3_dywbp")]
-position = Vector2(493, 609)
+position = Vector2(694, 637)
+next_scene_path = "uid://vywm2ntai4er"
 
 [node name="SpawnPoint" parent="." instance=ExtResource("4_bfxgj")]
 position = Vector2(-243, 635)

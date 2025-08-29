@@ -10,6 +10,8 @@ const JUMP_VELOCITY = -725.0
 ## Maximum speed at which the player can fall.
 const TERMINAL_VELOCITY = 700
 
+var can_control: bool = true
+
 ## The player listens for input actions appended with this suffix.[br]
 ## Used to separate controls for multiple players in splitscreen.
 @export var action_suffix := ""
@@ -26,6 +28,14 @@ var _double_jump_charged := false
 
 
 func _physics_process(delta: float) -> void:
+	# 如果禁止操作 → 清空水平速度，但還是保留重力
+	if not can_control:
+		velocity.x = 0.0
+		velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
+		move_and_slide()
+		return
+
+	#  正常控制流程
 	if is_on_floor():
 		_double_jump_charged = true
 	if Input.is_action_just_pressed("jump" + action_suffix):
@@ -33,6 +43,7 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
 		# The player let go of jump early, reduce vertical momentum.
 		velocity.y *= 0.6
+
 	# Fall.
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
 
@@ -87,6 +98,7 @@ func try_jump() -> void:
 		return
 	velocity.y = JUMP_VELOCITY
 	jump_sound.play()
+
 
 func _ready():
 	add_to_group("player")

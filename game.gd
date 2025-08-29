@@ -5,6 +5,7 @@ extends Node
 @onready var _pause_menu := $InterfaceLayer/PauseMenu as PauseMenu
 @onready var _level_root := $LevelRoot
 @onready var _player := $Player
+@onready var _video_player := $InterfaceLayer/AspectRatioContainer/VideoStreamPlayer
 
 func _ready():
 	change_level("res://scenes/levels/level0.tscn")
@@ -23,6 +24,12 @@ func change_level(path: String) -> void:
 	if spawn:
 		_player.global_position = spawn.global_position
 
+	# 連接新關卡裡所有電腦的 signal
+	for comp in new_level.get_tree().get_nodes_in_group("computers"):
+		comp.play_video.connect(play_video)
+		comp.stop_video.connect(stop_video)
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"toggle_fullscreen"):
 		var mode := DisplayServer.window_get_mode()
@@ -40,3 +47,20 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			_pause_menu.close()
 		get_tree().root.set_input_as_handled()
+
+func play_video(path: String):
+	_video_player.stream = load(path)
+	_video_player.visible = true
+	_video_player.play()
+	_player.can_control = false
+	#_player.set_process_input(false)
+	#get_tree().paused = true   # 暫停遊戲
+	print("Video playing: ", path)
+
+func stop_video():
+	_video_player.stop()
+	_video_player.visible = false
+	_player.can_control = true
+	#_player.set_process_input(true)
+	#get_tree().paused = false
+	print("Video stopped")
